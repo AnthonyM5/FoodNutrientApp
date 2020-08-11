@@ -24,6 +24,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'jquery-rails'
 gem 'bootstrap', '~> 5.0.0.alpha1'
 
+gem 'devise'
+
 
 
 # Use Active Storage variant
