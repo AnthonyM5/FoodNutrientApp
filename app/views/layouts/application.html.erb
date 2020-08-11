@@ -9,8 +9,7 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-  
+<body data-turbolinks="false">
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">My Meals</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,6 +20,9 @@
       <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" href="<%= new_user_session_path %>">Login</a>
       <a class="nav-item nav-link" href="<%= new_user_registration_path	%>">Sign Up</a>
+      <% if current_user %>
+      <a class="nav-item nav-link" href="<%= destroy_user_session_path %>">Log Out</a>
+      <% end %>
      <!-- <a class="nav-item nav-link disabled" href="#">Disabled</a> -->
     </div>
   </div>
