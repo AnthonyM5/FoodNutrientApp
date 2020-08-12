@@ -1,0 +1,6 @@
+<% @meals.each do |meal| %>
+ <%= meal.name %>
+ <%= meal.user.id %>
+ <% end %>
+
+ <%= link_to "Create a New Meal", new_meal_path  %>

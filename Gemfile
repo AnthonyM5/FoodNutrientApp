@@ -23,8 +23,10 @@ gem 'jbuilder', '~> 2.7'
 gem 'bcrypt', '~> 3.1.7'
 gem 'jquery-rails'
 gem 'bootstrap', '~> 5.0.0.alpha1'
-
+gem 'omniauth-google-oauth2'
 gem 'devise'
+gem 'dotenv-rails', groups: [:development, :test]
+
 
 
 
