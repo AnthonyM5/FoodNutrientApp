@@ -1,11 +1,27 @@
 
 <h1>Index Page</h1>
+ <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Meal ID#</th>
+      <th scope="col">Meal Name:</th>
+      <th scope="col">Email:</th>
+      <th scope="col"># of Ingredients</th>
+      <th scope="col">Created At:</th>
+    </tr>
+  </thead>
+<tbody>
+<% @meals.each do |meal| %>
+<tr>
+<th scope="row"><%= meal.id %></p></th>
+<td><%= link_to "#{meal.name}", meal_path(meal.id) %></td>
+ <td> <%= meal.user.email %></td>
+ <td> <%= meal.meal_foods.count %></td>
+ <td><%= meal.created_at %></td>
+ </tr>
+ <% end %>
+ </tbody>
+</table>
 
-<p><% @meals.each do |meal| %>
-<p><%= link_to "#{meal.name}", meal_path(meal.id) %>
- User ID: <%= meal.user.email %>
- # of Ingredients: <%= meal.meal_foods.count %>
- Created At: <%= meal.created_at %></p>
- <% end %></p>
 
  <%= link_to "Create a New Meal", new_meal_path  %>
