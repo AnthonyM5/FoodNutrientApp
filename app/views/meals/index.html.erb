@@ -1,6 +1,9 @@
-<% @meals.each do |meal| %>
- <%= meal.name %>
- <%= meal.user.id %>
- <% end %>
+
+<h1>Index Page</h1>
+
+<p><% @meals.each do |meal| %>
+<p><%= link_to "#{meal.name}", meal_path(meal.id) %>
+ User ID: <%= meal.user.email %></p>
+ <% end %></p>
 
  <%= link_to "Create a New Meal", new_meal_path  %>

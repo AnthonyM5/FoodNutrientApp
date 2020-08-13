@@ -24,17 +24,13 @@
       <a class="nav-item nav-link" href="<%= new_user_session_path %>">Login</a>
       <a class="nav-item nav-link" href="<%= new_user_registration_path	%>">Sign Up</a>
       <% end %>
-      
-     
-      
-    
-
     </div>
   </div>
 </nav>
+          <%= yield %>
      <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
-    <%= yield %>
+    
   </body>
 </html>
 

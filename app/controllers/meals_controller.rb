@@ -1,4 +1,5 @@
 class MealsController < ApplicationController
+    helper_method :params
 
     def index
         @meals = Meal.all
@@ -13,12 +14,19 @@ class MealsController < ApplicationController
     end
 
     def create
-        meal = Meal.create(meal_params)
-        redirect_to meals_path
+        @meal = Meal.create(meal_params)
+        if @meal.valid?
+        @meal.save
+        redirect_to meal_path(@meal)
+        else 
+        render 'new' 
+        puts @meal.errors.full_messages
+        end
     end
 
     def meal_params
-        params.require(:meal).permit(:name, :user_id, :food_id)
+        params[:meal][:user_id] = current_user.id
+        params.require(:meal).permit(:user_id, :name, :food_id)
     end
 
 end
