@@ -3,7 +3,9 @@
 
 <p><% @meals.each do |meal| %>
 <p><%= link_to "#{meal.name}", meal_path(meal.id) %>
- User ID: <%= meal.user.email %></p>
+ User ID: <%= meal.user.email %>
+ # of Ingredients: <%= meal.meal_foods.count %>
+ Created At: <%= meal.created_at %></p>
  <% end %></p>
 
  <%= link_to "Create a New Meal", new_meal_path  %>

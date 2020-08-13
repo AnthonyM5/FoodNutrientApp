@@ -1,0 +1,5 @@
+<p><% @foods.each do |food| %>
+<p><%= link_to "#{food.name}", meal_path(food.id) %>
+ <% end %></p>
+
+ <%= link_to "Create a Food", new_food_path  %>
