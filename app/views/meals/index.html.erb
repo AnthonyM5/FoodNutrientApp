@@ -1,5 +1,6 @@
 
-<h1>Index Page</h1>
+<div class="d-flex justify-content-start"><h1>All Meals</h1></div>
+
  <table class="table">
   <thead>
     <tr>
@@ -18,6 +19,7 @@
  <td> <%= meal.user.email %></td>
  <td> <%= meal.meal_foods.count %></td>
  <td><%= meal.created_at %></td>
+ <td><%= button_to "Delete", meal_path(meal.id), method: "delete" %></td>
  </tr>
  <% end %>
  </tbody>

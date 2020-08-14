@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   # devise_for :users, controllers: { sessions: 'users/sessions' }
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
-  resources :meals, only: [:new, :create, :update, :edit, :index, :show] 
+  resources :meals, only: [:new, :create, :update, :edit, :index, :show, :destroy] 
   resources :foods, only: [:new, :create, :update, :edit, :index, :show] 
   get '/meals/new', to: 'meals#new'
   
