@@ -3,7 +3,11 @@ module MealsHelper
     def display_food
 
         @meal.meal_foods.each do |food| 
-            @included = Food.find(food.id)
+            @included = []
+            included = Food.where(food.food_id)
+            included.each do |f|
+                @included << f.name
+            end
         end  
     end
 
