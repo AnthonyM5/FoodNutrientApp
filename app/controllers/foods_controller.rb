@@ -6,8 +6,8 @@ class FoodsController < ApplicationController
 
     def index
         @foods = Food.all
-        food_index
-    end
+        food_index["foods"].each{|food| Food.create_by_food_hash(food)}
+    end    
 
     def new
         @food = Food.new
