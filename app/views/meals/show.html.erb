@@ -1,6 +1,11 @@
 <div class="d-flex p-2"><h1> Show Page </h1></div>
 <p>Meal Name: <%= @meal.name %></p>
 <p>Food_ID: <%= @meal.food_id %></p>
+<p>Included Foods:
+<% display_food %>
+<%= @included %>
+</p>
 <p>Created At: <%= @meal.created_at %></p>
 <p>Last Updated: <%= @meal.updated_at %></p>
 <%= link_to "All Meals", meals_path %>
+<%= link_to "Edit Meal", edit_meal_path %>

@@ -1,5 +1,6 @@
 class MealsController < ApplicationController
     helper_method :params
+    include MealsHelper
 
     def index
         @meals = Meal.all
@@ -7,6 +8,18 @@ class MealsController < ApplicationController
 
     def new
         @meal = Meal.new
+        @foods = Food.all
+    end
+
+    def edit
+        @meal = Meal.find_by(id: params[:id])
+    end
+
+    def update
+        meal = Meal.find_by(id: params[:id])
+        
+        meal.update(meal_params)
+        redirect_to meal_path(meal)
     end
 
     def show
@@ -15,23 +28,14 @@ class MealsController < ApplicationController
 
     def create
         @meal = Meal.create(meal_params)
-        new_params = meal_params.except(:user_id, :name)
-        new_params[:meal_id] = @meal.id
-        MealFood.create(new_params)
         if @meal.valid?
         @meal.save
-    
+        add_to_meal 
         redirect_to meal_path(@meal)
         else 
         render 'new' 
         puts @meal.errors.full_messages
         end
-    end
-
-    def meal_params
-        params[:meal][:user_id] = current_user.id
-        params[:meal][:food_id] = params[:food][:food_id]
-        params.require(:meal).permit(:user_id, :name, :food_id)
     end
 
     def destroy
@@ -40,4 +44,12 @@ class MealsController < ApplicationController
         redirect_to meals_path
     end
 
+    private
+
+    def meal_params
+        params[:meal][:user_id] = current_user.id
+        params.require(:meal).permit!
+    end
+
+   
 end

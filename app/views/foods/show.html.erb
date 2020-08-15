@@ -1,5 +1,6 @@
 <div class="d-flex p-2"><h1> Show Page </h1></div>
 <p>Name: <%= @food.name %></p>
 <p>FDCID: <%= @food.id %></p>
+<p>Associated in <%= @food.meal_foods.count %> Meals</p>
 
 <%= button_to "All Foods", foods_path, method: "get" %>
