@@ -1,5 +1,13 @@
 <p><% @foods.each do |food| %>
 <p><%= link_to "#{food.name}", food_path(food.id) %>
- <% end %></p>
 
- <%= button_to "Create a Food", new_food_path, method: 'get' %>
+ <% end %></p>
+<% @food_index["foods"].each do |food| %> 
+<p>Food Name: <%= food["description"] %><p>
+<p>Nutrient Name: <% food["foodNutrients"].each do |nutrient| %>
+<%= nutrient["nutrientName"] %> Nutrient Value: <%= nutrient["value"] %> </p>
+<% end %>
+<% end %>
+
+
+<%= button_to "Create a Food", new_food_path, method: 'get' %>

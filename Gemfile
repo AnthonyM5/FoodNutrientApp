@@ -26,6 +26,7 @@ gem 'bootstrap', '~> 5.0.0.alpha1'
 gem 'devise'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'omniauth-google-oauth2'
+gem 'httparty'
 
 
 

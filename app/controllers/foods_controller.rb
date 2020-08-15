@@ -1,9 +1,12 @@
 class FoodsController < ApplicationController
     helper_method :params
     helper_method :index
+    include FoodsHelper
+
 
     def index
         @foods = Food.all
+        food_index
     end
 
     def new
