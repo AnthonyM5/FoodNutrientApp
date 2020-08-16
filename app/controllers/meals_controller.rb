@@ -24,6 +24,7 @@ class MealsController < ApplicationController
 
     def show
         @meal = Meal.find_by(id: params[:id])
+        display_food
     end
 
     def create

@@ -2,8 +2,9 @@
 <p>Meal Name: <%= @meal.name %></p>
 <p>Food_ID: <%= @meal.food_id %></p>
 <p>Included Foods:
-<% display_food %>
-<%= @included %>
+<% @included.each do |food| %>
+<p><%= food %></p>
+<% end %>
 </p>
 <p>Created At: <%= @meal.created_at %></p>
 <p>Last Updated: <%= @meal.updated_at %></p>

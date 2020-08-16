@@ -14,9 +14,10 @@ ActiveRecord::Schema.define(version: 2020_08_15_223714) do
 
   create_table "foods", force: :cascade do |t|
     t.string "name"
+    t.string "nutrient_hash"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "nutrient_hash"
+    
   end
 
   create_table "meal_foods", force: :cascade do |t|

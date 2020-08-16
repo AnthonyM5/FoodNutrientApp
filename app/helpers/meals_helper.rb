@@ -1,10 +1,9 @@
 module MealsHelper
 
     def display_food
-
+        @included = []
         @meal.meal_foods.each do |food| 
-            @included = []
-            included = Food.where(food.food_id)
+            included = Food.where(id: food.food_id)
             included.each do |f|
                 @included << f.name
             end
