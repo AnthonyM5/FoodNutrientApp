@@ -1,6 +1,32 @@
-<div class="d-flex p-2"><h1> Show Page </h1></div>
 <p>Name: <%= @food.name %></p>
-<p>FDCID: <%= @food.id %></p>
+<p>Food_ID: <%= @food.id %></p>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nutrient Name:</th>
+      <th scope="col">Nutrient Number:</th>
+      <th scope="col">Nutrient Value:</th>
+    </tr>
+  </thead>
+  <tbody>
+
+  <% @food.nutrient_hash.each do |nutrient| %>
+    <tr>
+  <th scope ="row"></th>
+<td><%= nutrient["nutrientName"] %>:</td>
+<td><%= nutrient["nutrientNumber"] %></td>
+<td><%= nutrient["value"] %>
+<%= nutrient["unitName"] %></td>
+</tr>
+<% end %>
+</tbody>
+  </table>
+
+
+
+
+
 <p>Associated in <%= @food.meal_foods.count %> Meals</p>
 
 <%= button_to "All Foods", foods_path, method: "get" %>
