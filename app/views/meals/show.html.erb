@@ -3,7 +3,7 @@
 <p>Food_ID: <%= @meal.food_id %></p>
 <p>Included Foods:
 <% @included.each do |food| %>
-<p><%= food %></p>
+<p><%= link_to food.name, food_path(food) %></p>
 <% end %>
 </p>
 <p>Created At: <%= @meal.created_at %></p>
