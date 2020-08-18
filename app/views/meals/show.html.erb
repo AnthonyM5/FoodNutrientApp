@@ -9,5 +9,8 @@
 <p>Created At: <%= @meal.created_at %></p>
 <p>Public Meal: <%= @meal.published %>
 <p>Last Updated: <%= @meal.updated_at %></p>
+<p>Comments: <% @meal.comments.each do |comment| %>
+<%= comment.content %></p>
+<% end %>
 <%= link_to "All Meals", meals_path %>
 <%= link_to "Edit Meal", edit_meal_path %>

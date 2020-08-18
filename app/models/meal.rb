@@ -6,6 +6,7 @@ class Meal < ApplicationRecord
     has_many :users, through: :comments
     serialize :meal_food_ids
     serialize :food_id
+    accepts_nested_attributes_for :comments
     scope :published, -> { where(published: true) }
     
 end
