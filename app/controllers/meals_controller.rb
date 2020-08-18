@@ -24,6 +24,7 @@ class MealsController < ApplicationController
 
     def show
         @meal = Meal.find_by(id: params[:id])
+        @comment = Comment.new
         display_food
     end
 
@@ -31,8 +32,6 @@ class MealsController < ApplicationController
         @meal = Meal.create(meal_params)
         if @meal.valid?
         @meal.save
-        add_to_meal 
-        byebug
         redirect_to meal_path(@meal)
         else 
         render 'new' 
@@ -50,7 +49,7 @@ class MealsController < ApplicationController
 
     def meal_params
         params[:meal][:user_id] = current_user.id
-        params.require(:meal).permit(:name, :published, :user_id, :food_id)
+        params.require(:meal).permit(:name, :published, :user_id, food_ids:[])
     end
 
    

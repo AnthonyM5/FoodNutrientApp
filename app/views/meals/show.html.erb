@@ -12,5 +12,12 @@
 <p>Comments: <% @meal.comments.each do |comment| %>
 <%= comment.content %></p>
 <% end %>
+
+<p><%= form_for([@meal, @comment]) do |f| %>
+<%= f.label :content %>
+<%= f.text_area :content %>
+<%= f.submit %>
+<% end %></p>
+
 <%= link_to "All Meals", meals_path %>
 <%= link_to "Edit Meal", edit_meal_path %>
