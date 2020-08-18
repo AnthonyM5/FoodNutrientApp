@@ -3,7 +3,11 @@ class FoodsController < ApplicationController
 
 
     def index
+        if params[:query] != ""
+            @foods = Food.search_by_query(params[:query])
+        else
         @foods = Food.all
+        end
     end    
 
    # def new

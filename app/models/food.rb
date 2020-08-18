@@ -10,5 +10,9 @@ class Food < ApplicationRecord
         )
     end
 
+    def self.search_by_query(query)
+        where("name LIKE ?", "%#{query}%")
+    end
+
     
 end
