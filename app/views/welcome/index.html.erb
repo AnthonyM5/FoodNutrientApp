@@ -1,6 +1,9 @@
 <body data-turbolinks="false">
 <div class="container-fluid">
-<h1>Bootstrap Fluid Container<h1>
-<h3>Bootstrap Heading</h3>
+<h1>Track Your Meals<h1>
+<h3>Published Meals</h3>
+<% @meals.each do |meal| %>
+<%= link_to "#{meal.name}", meal_path(meal) %>
+<% end %>
 </div>
 </body>

@@ -2,7 +2,6 @@ class Food < ApplicationRecord
     has_many :meal_foods
     has_many :meals, through: :meal_foods
     serialize :nutrient_hash
-    validates :name, exclusion: {in: :name}
 
     def self.create_by_food_hash(food)
         create(

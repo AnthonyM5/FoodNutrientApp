@@ -9,8 +9,8 @@
   <%= hidden_field_tag :user_id, current_user.id %>
   </div>
   <div class="checkbox">
-    <label>
-      <input type="checkbox"> Make Public?
+    <%= f.label "Publish?" %>
+      <%= f.check_box :published %>
       <br>
     </label>
     <div class="actions">
