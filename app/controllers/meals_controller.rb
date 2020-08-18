@@ -13,6 +13,12 @@ class MealsController < ApplicationController
 
     def edit
         @meal = Meal.find_by(id: params[:id])
+        
+        if params[:query] != ""
+            @foods = Food.search_by_query(params[:query])
+        else
+        @foods = Food.all
+        end
     end
 
     def update
