@@ -1,22 +1,2 @@
 
-  <%= form_for @meal do |f| %>
-  <div class="form-group">
-  <%= f.label :name, "New Name" %>
-  <%= f.text_field :name, class:"form-control" %>
-  <p>Total Foods: <%= @meal.meal_foods.count %> </p>
-  <% unless display_food %>
-  <p>Included Foods: <%= @included.name %></p>
-  <% end %>
-  <%= f.label :meal_food_ids, "Add More Foods" %>
-  <%= collection_check_boxes(:food, :meal, Food.all, :id, :name) %>
-  <%= hidden_field_tag :user_id, current_user.id %>
-  </div>
-  <div class="checkbox">
-    <label>
-      <input type="checkbox"> Make Public?
-      <br>
-    </label>
-    <div class="actions">
-    <%= f.submit class:"btn btn-default" %> 
-    <% end %>
-  </div>
+  <%= render 'form' %>

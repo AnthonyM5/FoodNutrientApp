@@ -17,7 +17,6 @@ class MealsController < ApplicationController
 
     def update
         meal = Meal.find_by(id: params[:id])
-        
         meal.update(meal_params)
         redirect_to meal_path(meal)
     end
