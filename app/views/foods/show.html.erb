@@ -10,10 +10,10 @@
     </tr>
   </thead>
   <tbody>
-
-  <% @food.nutrient_hash.each do |nutrient| %>
+  
+  <%  @food.nutrient_hash.sort_by{ |h| h["nutrientName"] }.each_with_index do |nutrient, i| %>
     <tr>
-  <th scope ="row"></th>
+  <th scope ="row"><%= i + 1 %></th>
 <td><%= nutrient["nutrientName"] %>:</td>
 <td><%= nutrient["nutrientNumber"] %></td>
 <td><%= nutrient["value"] %>
