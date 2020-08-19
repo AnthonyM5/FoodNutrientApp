@@ -3,7 +3,6 @@
 <%= text_field_tag :query %>
 <p><% @foods.each do |food| %>
 <p><%= link_to "#{food.name}", food_path(food.id) %>
-<%= food.nutrient_hash.length %>
  <% end %></p>
 
 
