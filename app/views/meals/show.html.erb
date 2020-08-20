@@ -1,8 +1,10 @@
 <div class="d-flex p-2"><h1> Show Page </h1></div>
 <p>Meal Name: <%= @meal.name %></p>
-<p>Food_ID: <%= @meal.food_id %></p>
+<p>Foods: <%= @meal.meal_foods.length %></p>
+
 <p>Included Foods:
 <% @included.each do |food| %>
+<p>Calculated: <%= food.protein %></p>
 <p><%= link_to food.name, food_path(food) %></p>
 <% end %>
 </p>

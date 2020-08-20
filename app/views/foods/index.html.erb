@@ -2,10 +2,8 @@
 <%= label_tag "Search Foods" %>
 <%= text_field_tag :query %>
 <p><% @foods.each do |food| %>
-<p><%= link_to "#{food.name}", food_path(food.id) %>
+<p><%= food.id %>: 
+<%= link_to "#{food.name}", food_path(food.id) %>
+Protein: <%= food.protein %>
 
  <% end %></p>
-
-
-
-<%= button_to "Create a Food", new_food_path, method: 'get' %>
