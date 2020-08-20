@@ -34,7 +34,16 @@ class Food < ApplicationRecord
         where("name LIKE ?", "%#{query}%")
     end
 
-    def update_lipid(food, num)
+    def food_nutrient_hash(food)
+        new_hash = Hash.new
+        food.nutrient_hash.each do |nutrient|
+            nutrient_key = nutrient["nutrientNumber"]
+            new_hash[nutrient_key] = nutrient if nutrient_key
+        end
+        return new_hash
+    end
+
+    def update_nutrient (food_nutrient_hash)
             nutrient = food.nutrient_hash.find {|h| h['nutrientNumber'] == num }
             update(total_lipid: nutrient['value']) if nutrient 
     end
