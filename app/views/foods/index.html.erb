@@ -1,8 +1,23 @@
+
 <%= form_tag foods_path, method: :get %>
 <%= label_tag "Search Foods" %>
 <%= text_field_tag :query %>
+</form>
+<%= form_tag foods_path, method: :get %>
+<%= label_tag :sort_options, "Sort By:" %>
+<%= text_field_tag :sort_options %>
+<datalist id=:sort_options>
+  <option_value"calories">
+  <option_value="carbs">
+</datalist>
+
+
+
 <p><% @foods.each do |food| %>
 <p><%= food.id %>: 
 <%= link_to "#{food.name}", food_path(food.id) %>
 
  <% end %></p>
+
+
+

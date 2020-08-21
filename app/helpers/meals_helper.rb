@@ -10,6 +10,7 @@ module MealsHelper
                 @calculations += f.calories
             end
         end  
+        @calculations
     end
 
     # def add_to_meal 

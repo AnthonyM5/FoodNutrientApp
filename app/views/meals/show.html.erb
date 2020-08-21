@@ -1,7 +1,7 @@
 <div class="d-flex p-2"><h1> Show Page </h1></div>
 <p>Meal Name: <%= @meal.name %></p>
 <p>Foods: <%= @meal.meal_foods.length %></p>
-
+<p>Total Calories: <%= @calculated %>
 <p>Included Foods:
 <% @included.each do |food| %>
 <p>Calories: <%= food.calories %></p>
