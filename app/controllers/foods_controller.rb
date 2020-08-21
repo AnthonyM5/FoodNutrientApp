@@ -3,11 +3,11 @@ class FoodsController < ApplicationController
 
 
     def index
-        if params[:query] != ""
+        if params[:query] != "" && params[:sort_options] != ""
             @foods = Food.search_by_query(params[:query])
-            if params[:sort_options]  != "" 
-                sort_column
-            end
+            sort_column
+        elsif params{:query} != ""
+            @foods = Food.search_by_query(params[:query])
         else
         @foods = Food.all
         end
@@ -21,11 +21,10 @@ class FoodsController < ApplicationController
     private
 
     def sort_column
-        sort_params = params[:sort_options]
-        case sort_params
-        when sort_params == "calories"
+        if params[:sort_options] == "calories"
             @foods = Food.order(:calories)
-        when sort_params == "carbs"
+        end
+        if params[:sort_options] == "carbs"
             @foods = Food.order(:carbs)
         end
     end
