@@ -3,4 +3,21 @@
   <%= text_field_tag :query %>
   </form></p>
 
-  <%= render 'form' %>
+<%= form_for @meal do |f| %>
+  <div class="form-group">
+  <%= f.label :name %>
+  <%= f.text_field :name, class:"form-control" %>
+  
+  <%= f.label :food_ids, "Add Foods" %>
+  <%= collection_check_boxes(:meal, :food_ids, @foods, :id, :name) %>
+  <%= hidden_field_tag :user_id, current_user.id %>
+  </div>
+  <div class="checkbox">
+    <%= f.label "Publish?" %>
+      <%= f.check_box :published %>
+      <br>
+    </label>
+    <div class="actions">
+    <%= f.submit class:"btn btn-default" %> 
+    <% end %>
+  </div>

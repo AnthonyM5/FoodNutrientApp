@@ -4,9 +4,13 @@
   <div class="form-group">
   <%= f.label :name %>
   <%= f.text_field :name, class:"form-control" %>
-  
   <%= f.label :food_ids, "Add Foods" %>
-  <%= collection_check_boxes(:meal, :food_ids, @foods, :id, :name) %>
+  <%= f.text_field :food_ids, list: 'food-ids' %>
+  <datalist id='food-ids'>
+  <% Food.all.each do |food| %>
+  <option value="<%= food.id%>"><%= food.name %></option>
+  <% end %>
+  </datalist>
   <%= hidden_field_tag :user_id, current_user.id %>
   </div>
   <div class="checkbox">

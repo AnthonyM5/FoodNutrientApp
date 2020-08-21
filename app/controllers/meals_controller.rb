@@ -3,7 +3,12 @@ class MealsController < ApplicationController
     include MealsHelper
 
     def index
-        @meals = Meal.all
+        if current_user.meal_ids.empty?
+            flash[:errors] = "Add a new Meal"
+            redirect_to new_meal_path
+        else
+            @meals = current_user.meals
+        end
     end
 
     def new
@@ -13,7 +18,6 @@ class MealsController < ApplicationController
 
     def edit
         @meal = Meal.find_by(id: params[:id])
-        
         if params[:query] != ""
             @foods = Food.search_by_query(params[:query])
         else
@@ -54,7 +58,7 @@ class MealsController < ApplicationController
 
     def meal_params
         params[:meal][:user_id] = current_user.id
-        params.require(:meal).permit(:name, :published, :user_id, food_ids:[])
+        params.require(:meal).permit(:name, :published, :user_id, :food_ids, food_ids:[])
     end
 
    

@@ -1,5 +1,6 @@
 <p>Name: <%= @food.name %></p>
 <p>Food_ID: <%= @food.id %></p>
+<p>Nutrient_Hash: <%= @food.attributes %></p>
 <table class="table">
   <thead>
     <tr>
@@ -10,8 +11,8 @@
     </tr>
   </thead>
   <tbody>
-  
-  <%  @food.nutrient_hash.sort_by{ |h| h["nutrientName"] }.each_with_index do |nutrient, i| %>
+
+  <% @food.nutrient_hash.sort_by{ |h| h["nutrientName"] }.each_with_index do |nutrient, i| %>
     <tr>
   <th scope ="row"><%= i + 1 %></th>
 <td><%= nutrient["nutrientName"] %>:</td>
