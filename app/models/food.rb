@@ -38,186 +38,52 @@ class Food < ApplicationRecord
         new_hash = Hash.new
         food.nutrient_hash.each do |nutrient|
             nutrient_key = nutrient["nutrientNumber"]
-            new_hash[nutrient_key] = nutrient if nutrient_key
+            new_hash[nutrient_key] = nutrient["value"] if nutrient_key
         end
-        return new_hash
+        food.update(food, new_hash)
     end
 
-    def update_nutrient (food_nutrient_hash)
-            nutrient = food.nutrient_hash.find {|h| h['nutrientNumber'] == num }
-            update(total_lipid: nutrient['value']) if nutrient 
+    def update_nutrient (food, nutrient_hash)
+        food.update(
+            total_lipid: nutrient_hash["204"],
+            protein: nutrient_hash["203"],
+            carbs: nutrient_hash["205"],
+            fiber: nutrient_hash["291"],
+            starch: nutrient_hash["209"],
+            total_sugar: nutrient_hash["269"],
+            sucrose: nutrient_hash["210"],
+            glucose: nutrient_hash["211"],
+            water: nutrient_hash["255"],
+            fructose: nutrient_hash["212"],
+            lactose: nutrient_hash["213"],
+            galactose: nutrient_hash["287"],
+            ash: nutrient_hash["207"],
+            calcium: nutrient_hash["301"],
+            iron: nutrient_hash["303"],
+            magnesium: nutrient_hash["304"],
+            sodium: nutrient_hash["307"],
+            zinc: nutrient_hash["309"],
+            copper: nutrient_hash["312"],
+            selenium: nutrient_hash["317"],
+            vitamin_a: nutrient_hash["318"],
+            vitamin_a_r: nutrient_hash["320"],
+            cholesterol: nutrient_hash["601"],
+            calories: nutrient_hash["208"],
+            vitamin_d: nutrient_hash["324"],
+            kj: nutrient_hash["268"],
+            vitamin_e: nutrient_hash["323"],
+            vitamin_c: nutrient_hash["401"],
+            niacin: nutrient_hash["406"],
+            pantothenic: nutrient_hash["410"],
+            vitamin_b6: nutrient_hash["415"],
+            total_folate: nutrient_hash["417"],
+            folic_acid: nutrient_hash["431"],
+            food_folate: nutrient_hash["432"],
+            folate_dfe: nutrient_hash["435"],
+            sat_fats: nutrient_hash["606"],
+            poly_unsat_fats: nutrient_hash["646"]
+        )
     end
 
-    def update_protein(food)
-        !!food.nutrient_hash.find {|h| h['nutrientNumber'] == "203" } ? update(
-            protein: food.nutrient_hash.find {|h| h['nutrientNumber'] == "203" }['value']
-            ) : nil 
-    end
-
-    def update_water(food)
-        !!food.nutrient_hash.find {|h| h['nutrientNumber'] == "255" } ? update(
-            water: food.nutrient_hash.find {|h| h['nutrientNumber'] == "255" }['value']
-            ) : nil 
-    end
-
-    def update_carbs(food)
-        !!food.nutrient_hash.find {|h| h['nutrientNumber'] == "205" } ? update(
-            carbs: food.nutrient_hash.find {|h| h['nutrientNumber'] == "205" }['value']
-            ) : nil 
-    end
-
-    def update_calories(food)
-        !!food.nutrient_hash.find {|h| h['nutrientNumber'] == "208" } ? update(
-                calories: food.nutrient_hash.find {|h| h['nutrientNumber'] == "208" }['value']
-                ) : nil 
-    end
-
-    def update_kj(food)        
-            !!food.nutrient_hash.find {|h| h['nutrientNumber'] == "268" } ? update(
-                kj: food.nutrient_hash.find {|h| h['nutrientNumber'] == "268" }['value']
-                ) : nil 
-    end
-            
-                
-    #         !!food.nutrient_hash.find {|h| h['nutrientNumber'] == "209" } ? update(
-    #             starch: food.nutrient_hash.find {|h| h['nutrientNumber'] == "209" }['value']
-    #             ) : nil 
-                
-    #         !!food.nutrient_hash.find {|h| h['nutrientNumber'] == "269" } ? update(
-    #             total_sugar: food.nutrient_hash.find {|h| h['nutrientNumber'] == "269" }['value']
-    #             ) : nil 
-                
-    #         !!food.nutrient_hash.find {|h| h['nutrientNumber'] == "210" } ? update(
-    #             sucrose: food.nutrient_hash.find {|h| h['nutrientNumber'] == "210" }['value']
-    #             ) : nil 
-                
-    #         !!food.nutrient_hash.find {|h| h['nutrientNumber'] == "211" } ? update(
-    #             glucose: food.nutrient_hash.find {|h| h['nutrientNumber'] == "211" }['value']
-    #             ) : nil 
-                
-    #         !!food.nutrient_hash.find {|h| h['nutrientNumber'] == "212" } ? update(
-    #             fructose: food.nutrient_hash.find {|h| h['nutrientNumber'] == "212" }['value']
-    #             ) : nil 
-                
-    #         !!food.nutrient_hash.find {|h| h['nutrientNumber'] == "213" } ? update(
-    #             lactose: food.nutrient_hash.find {|h| h['nutrientNumber'] == "213" }['value']
-    #             ) : nil 
-                
-    #         !!food.nutrient_hash.find {|h| h['nutrientNumber'] == "287" } ? update(
-    #             galactose: food.nutrient_hash.find {|h| h['nutrientNumber'] == "287" }['value']
-    #             ) : nil 
-                
-    #         !!food.nutrient_hash.find {|h| h['nutrientNumber'] == "207" } ? update(
-    #             ash: food.nutrient_hash.find {|h| h['nutrientNumber'] == "207" }['value']
-    #             ) : nil 
-                
-    #         !!food.nutrient_hash.find {|h| h['nutrientNumber'] == "301" } ? update(
-    #             calcium: food.nutrient_hash.find {|h| h['nutrientNumber'] == "301" }['value']
-    #             ) : nil 
-
-    #         !!food.nutrient_hash.find {|h| h['nutrientNumber'] == "303" } ? update(
-    #             iron: food.nutrient_hash.find {|h| h['nutrientNumber'] == "303" }['value']
-    #             ) : nil 
-
-    #         !!food.nutrient_hash.find {|h| h['nutrientNumber'] == "304" } ? update(
-    #             magnesium: food.nutrient_hash.find {|h| h['nutrientNumber'] == "304" }['value']
-    #             ) : nil 
-
-    #         !!food.nutrient_hash.find {|h| h['nutrientNumber'] == "307" } ? update(
-    #             sodium: food.nutrient_hash.find {|h| h['nutrientNumber'] == "307" }['value']
-    #             ) : nil 
-            
-    #         !!food.nutrient_hash.find {|h| h['nutrientNumber'] == "309" } ? update(
-    #             zinc: food.nutrient_hash.find {|h| h['nutrientNumber'] == "309" }['value']
-    #             ) : nil 
-        
-    #         !!food.nutrient_hash.find {|h| h['nutrientNumber'] == "312" } ? update(
-    #             copper: food.nutrient_hash.find {|h| h['nutrientNumber'] == "312" }['value']
-    #             ) : nil 
-                    
-    #         !!food.nutrient_hash.find {|h| h['nutrientNumber'] == "317" } ? update(
-    #             selenium: food.nutrient_hash.find {|h| h['nutrientNumber'] == "317" }['value']
-    #             ) : nil 
-                
-    #         !!food.nutrient_hash.find {|h| h['nutrientNumber'] == "318" } ? update(
-    #             vitamin_a: food.nutrient_hash.find {|h| h['nutrientNumber'] == "318" }['value']
-    #             ) : nil 
-
-    #         !!food.nutrient_hash.find {|h| h['nutrientNumber'] == "320" } ? update(
-    #             vitamin_a_r: food.nutrient_hash.find {|h| h['nutrientNumber'] == "320" }['value']
-    #             ) : nil      
-
-    #         !!food.nutrient_hash.find {|h| h['nutrientNumber'] == "324" } ? update(
-    #             vitamin_d: food.nutrient_hash.find {|h| h['nutrientNumber'] == "324" }['value']
-    #             ) : nil     
-                
-    #         !!food.nutrient_hash.find {|h| h['nutrientNumber'] == "323" } ? update(
-    #             vitamin_e: food.nutrient_hash.find {|h| h['nutrientNumber'] == "323" }['value']
-    #             ) : nil    
-                
-    #         !!food.nutrient_hash.find {|h| h['nutrientNumber'] == "401" } ? update(
-    #             vitamin_c: food.nutrient_hash.find {|h| h['nutrientNumber'] == "401" }['value']
-    #             ) : nil 
-
-    #         !!food.nutrient_hash.find {|h| h['nutrientNumber'] == "404" } ? update(
-    #             thiamin: food.nutrient_hash.find {|h| h['nutrientNumber'] == "404" }['value']
-    #             ) : nil 
-
-    #         !!food.nutrient_hash.find {|h| h['nutrientNumber'] == "405" } ? update(
-    #             riboflavin: food.nutrient_hash.find {|h| h['nutrientNumber'] == "405" }['value']
-    #             ) : nil 
-
-    #         !!food.nutrient_hash.find {|h| h['nutrientNumber'] == "406" } ? update(
-    #             niacin: food.nutrient_hash.find {|h| h['nutrientNumber'] == "406" }['value']
-    #             ) : nil 
-                
-    #         !!food.nutrient_hash.find {|h| h['nutrientNumber'] == "410" } ? update(
-    #             pantothenic: food.nutrient_hash.find {|h| h['nutrientNumber'] == "410" }['value']
-    #             ) : nil 
-
-    #         !!food.nutrient_hash.find {|h| h['nutrientNumber'] == "415" } ? update(
-    #             vitamin_b6: food.nutrient_hash.find {|h| h['nutrientNumber'] == "415" }['value']
-    #             ) : nil 
-
-    #         !!food.nutrient_hash.find {|h| h['nutrientNumber'] == "417" } ? update(
-    #             total_folate: food.nutrient_hash.find {|h| h['nutrientNumber'] == "417" }['value']
-    #             ) : nil 
-
-    #         !!food.nutrient_hash.find {|h| h['nutrientNumber'] == "431" } ? update(
-    #             folic_acid: food.nutrient_hash.find {|h| h['nutrientNumber'] == "431" }['value']
-    #             ) : nil 
-
-    #         !!food.nutrient_hash.find {|h| h['nutrientNumber'] == "432" } ? update(
-    #             food_folate: food.nutrient_hash.find {|h| h['nutrientNumber'] == "432" }['value']
-    #             ) : nil 
-
-    #         !!food.nutrient_hash.find {|h| h['nutrientNumber'] == "435" } ? update(
-    #             folate_dfe: food.nutrient_hash.find {|h| h['nutrientNumber'] == "435" }['value']
-    #             ) : nil 
-
-    #         !!food.nutrient_hash.find {|h| h['nutrientNumber'] == "418" } ? update(
-    #             vitamin_b12: food.nutrient_hash.find {|h| h['nutrientNumber'] == "418" }['value']
-    #             ) : nil 
-                
-    #         !!food.nutrient_hash.find {|h| h['nutrientNumber'] == "601" } ? update(
-    #             cholesterol: food.nutrient_hash.find {|h| h['nutrientNumber'] == "601" }['value']
-    #             ) : nil 
-                
-    #         !!food.nutrient_hash.find {|h| h['nutrientNumber'] == "606" } ? update(
-    #             sat_fats: food.nutrient_hash.find {|h| h['nutrientNumber'] == "606" }['value']
-    #             ) : nil 
-    
-    #         !!food.nutrient_hash.find {|h| h['nutrientNumber'] == "646" } ? update(
-    #             poly_unsat_fats: food.nutrient_hash.find {|h| h['nutrientNumber'] == "646" }['value']
-    #             ) : nil 
-                    
-    #         !!food.nutrient_hash.find {|h| h['nutrientNumber'] == "208" } ? update(
-    #             calories: food.nutrient_hash.find {|h| h['nutrientNumber'] == "208" }['value']
-    #             ) : nil 
-            
-    #         !!food.nutrient_hash.find {|h| h['nutrientNumber'] == "268" } ? update(
-    #             kj: food.nutrient_hash.find {|h| h['nutrientNumber'] == "268" }['value']
-    #             ) : nil 
-    # end
 
 end

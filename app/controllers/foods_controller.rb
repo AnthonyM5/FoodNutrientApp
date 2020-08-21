@@ -16,7 +16,6 @@ class FoodsController < ApplicationController
 
     def show
         @food = Food.find_by(id: params[:id])
-        @food.food_nutrient_hash(@food)
     end
 
     # def create
