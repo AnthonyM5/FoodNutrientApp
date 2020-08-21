@@ -22,4 +22,6 @@
 <% end %></p>
 
 <%= link_to "All Meals", meals_path %>
+<% if current_user %>
 <%= link_to "Edit Meal", edit_meal_path %>
+<% end %>

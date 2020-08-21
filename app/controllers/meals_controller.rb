@@ -3,7 +3,12 @@ class MealsController < ApplicationController
     include MealsHelper
 
     def index
-        @meals = Meal.all
+        if current_user.meal_ids.empty?
+            flash[:errors] = "Add a new Meal"
+            redirect_to new_meal_path
+        else
+            @meals = current_user.meals
+        end
     end
 
     def new
