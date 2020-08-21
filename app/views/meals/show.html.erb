@@ -4,7 +4,7 @@
 
 <p>Included Foods:
 <% @included.each do |food| %>
-<p>Calculated: <%= food.protein %></p>
+<p>Calories: <%= food.calories %></p>
 <p><%= link_to food.name, food_path(food) %></p>
 <% end %>
 </p>

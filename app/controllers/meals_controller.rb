@@ -13,6 +13,11 @@ class MealsController < ApplicationController
 
     def edit
         @meal = Meal.find_by(id: params[:id])
+        if params[:query] != ""
+            @foods = Food.search_by_query(params[:query])
+        else
+        @foods = Food.all
+        end
     end
 
     def update
@@ -48,7 +53,7 @@ class MealsController < ApplicationController
 
     def meal_params
         params[:meal][:user_id] = current_user.id
-        params.require(:meal).permit(:name, :published, :user_id, food_ids:[])
+        params.require(:meal).permit(:name, :published, :user_id, :food_ids, food_ids:[])
     end
 
    
