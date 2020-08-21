@@ -4,6 +4,5 @@
 <p><% @foods.each do |food| %>
 <p><%= food.id %>: 
 <%= link_to "#{food.name}", food_path(food.id) %>
-Protein: <%= food.protein %>
 
  <% end %></p>

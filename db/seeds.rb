@@ -26,9 +26,10 @@ end
 food_index["foods"].each do |food| 
     Food.create_by_food_hash(food)
 end
-    Food.update_all
  
-
+Food.all.each do |food|
+    food.food_nutrient_hash(food)
+end
 
 
 

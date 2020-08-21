@@ -1,14 +1,8 @@
 class Food < ApplicationRecord
     has_many :meal_foods
     has_many :meals, through: :meal_foods
-    serialize :nutrient_hash
-    serialize :protein 
-    serialize :total_lipid
-    serialize :water
-    serialize :carbs
-    serialize :calories
-    serialize :kj
     validates :name, uniqueness: true
+    serialize :nutrient_hash
 
 
     def self.create_by_food_hash(food)
@@ -18,17 +12,17 @@ class Food < ApplicationRecord
         )
     end
 
-    def self.update_all
-        @foods = Food.all
-        @foods.each do |food|
-        food.update_lipid(food)
-        food.update_protein(food)
-        food.update_water(food)
-        food.update_carbs(food)
-        food.update_calories(food)
-        food.update_kj(food)
-        end
-    end
+    # def self.update_all
+    #     @foods = Food.all
+    #     @foods.each do |food|
+    #     food.update_lipid(food)
+    #     food.update_protein(food)
+    #     food.update_water(food)
+    #     food.update_carbs(food)
+    #     food.update_calories(food)
+    #     food.update_kj(food)
+    #     end
+    # end
 
     def self.search_by_query(query)
         where("name LIKE ?", "%#{query}%")
@@ -40,7 +34,7 @@ class Food < ApplicationRecord
             nutrient_key = nutrient["nutrientNumber"]
             new_hash[nutrient_key] = nutrient["value"] if nutrient_key
         end
-        food.update(food, new_hash)
+        food.update_nutrient(food, new_hash)
     end
 
     def update_nutrient (food, nutrient_hash)
