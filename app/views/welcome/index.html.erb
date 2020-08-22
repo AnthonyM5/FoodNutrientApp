@@ -1,18 +1,24 @@
-<body data-turbolinks="false">
-<div class="container-fluid">
-<h1>Track Your Meals<h1>
-<h3>Published Meals</h3>
-<table class="table">
-<thead>
-<tr>
-<th scope="col"></th>
-<th scope="col"></th>
-<th scope="col"></th>
+ <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Meal ID#</th>
+      <th scope="col">Meal Name:</th>
+      <th scope="col">Email:</th>
+      <th scope="col"># of Components</th>
+      <th scope="col"># of Comments</th>
+      <th scope="col">Created At:</th>
+    </tr>
+  </thead>
+<tbody>
 <% @meals.each do |meal| %>
-<p><%= link_to "#{meal.name}", meal_path(meal) %>
-# of Comments: 
-<%= meal.comments.count %>
-</p>
-<% end %>
-</div>
-</body>
+<tr>
+<th scope="row"><%= meal.id %></p></th>
+<td><%= link_to "#{meal.name}", meal_path(meal.id) %></td>
+ <td> <%= meal.user.email %></td>
+ <td> <%= meal.meal_foods.count %></td>
+ <td> <%= meal.comments_count %>
+ <td><%= meal.created_at %></td>
+ </tr>
+ <% end %>
+ </tbody>
+</table>

@@ -18,7 +18,8 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link active" href="<%= meals_path %>">My Meals<span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link active" href="/">Public Meals<span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link active" href="<%= foods_path %>">Food Index <span class="sr-only">(current)</span></a>
       <% if current_user %>
       <a class="nav-item nav-link" href="<%= destroy_user_session_path %>">Log Out</a>
