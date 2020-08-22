@@ -1,0 +1,27 @@
+<h1>My Comments</h1>
+
+
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">From Meal#:</th>
+      <th scope="col">User ID:</th>
+      <th scope="col">Content:</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <th scope="row"></th>
+    <% @comments.each do |comment| %>
+    <tr>
+      <th scope="row"><%= comment.id%></th>
+      <td><%= comment.meal_id %></td>
+      <td><%= comment.user_id %></td>
+      <td><%= comment.content %></td>
+      <% end %>
+    </tr>
+  </tbody>
+</table>

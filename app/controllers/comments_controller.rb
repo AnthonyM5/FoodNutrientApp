@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
     
     def index
         if current_user 
-            @usercomments = User.find(current_user.id).comments
+            @comments = User.find(current_user.id).comments
         else
             @comments = Comment.all
         end
