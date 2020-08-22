@@ -22,6 +22,7 @@
        <a class="nav-item nav-link active" href="<%= public_path %>">Public Meals<span class="sr-only">(current)</span></a>
       <% if current_user %>
       <a class="nav-item nav-link active" href="<%= meals_path %>">My Meals<span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link active" href="<%= comments_path %>">My Comments<span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" href="<%= destroy_user_session_path %>">Log Out</a>
       <% else %>
       <a class="nav-item nav-link" active" href="<%= new_user_session_path %>">Login<span class="sr-only">(current)</span></a>
