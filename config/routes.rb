@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :foods, only: [:new, :create, :update, :edit, :index, :show] 
   get '/meals/new', to: 'meals#new'
   get 'comments', to: 'comments#index', as: :comments
+  get '/public', to: 'welcome#index'
   
 
   
