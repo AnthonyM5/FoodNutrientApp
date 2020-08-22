@@ -1,13 +1,13 @@
 
-<div class="d-flex justify-content-start"><h1>All Meals</h1></div>
+<div class="d-flex justify-content-start"><h1>My Meals</h1></div>
 
  <table class="table">
   <thead>
     <tr>
       <th scope="col">Meal ID#</th>
       <th scope="col">Meal Name:</th>
-      <th scope="col">Email:</th>
       <th scope="col"># of Ingredients</th>
+      <th scope="col"># of Comments</th>
       <th scope="col">Created At:</th>
     </tr>
   </thead>
@@ -16,14 +16,12 @@
 <tr>
 <th scope="row"><%= meal.id %></p></th>
 <td><%= link_to "#{meal.name}", meal_path(meal.id) %></td>
- <td> <%= meal.user.email %></td>
  <td> <%= meal.meal_foods.count %></td>
+ <td> <%= meal.comments_count %>
  <td><%= meal.created_at %></td>
  <td><%= button_to "Delete", meal_path(meal.id), method: "delete" %></td>
  </tr>
  <% end %>
  </tbody>
 </table>
-
-
  <%= link_to "Create a New Meal", new_meal_path  %>

@@ -3,7 +3,7 @@
     <tr>
       <th scope="col">Meal ID#</th>
       <th scope="col">Meal Name:</th>
-      <th scope="col">Email:</th>
+      <th scope="col">User ID:</th>
       <th scope="col"># of Components</th>
       <th scope="col"># of Comments</th>
       <th scope="col">Created At:</th>
@@ -14,7 +14,7 @@
 <tr>
 <th scope="row"><%= meal.id %></p></th>
 <td><%= link_to "#{meal.name}", meal_path(meal.id) %></td>
- <td> <%= meal.user.email %></td>
+ <td> <%= meal.user.id %></td>
  <td> <%= meal.meal_foods.count %></td>
  <td> <%= meal.comments_count %>
  <td><%= meal.created_at %></td>

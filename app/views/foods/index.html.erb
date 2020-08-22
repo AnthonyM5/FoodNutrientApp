@@ -2,12 +2,11 @@
 <%= form_tag foods_path, method: :get %>
 <%= label_tag "Search Foods" %>
 <%= text_field_tag :query %>
-<%= select_tag "sort_options", raw("<option disabled>Additional Filter</option><option>carbs</option><option>calories</option>") %>
+<%= select_tag "sort_options", raw("<option>Carbs</option><option>Calories</option>") %>
 <%= submit_tag "Search" %>
 <p><% @foods.each do |food| %>
 <p><%= food.id %>: 
 <%= link_to "#{food.name}", food_path(food.id) %>
-
  <% end %></p>
 
 

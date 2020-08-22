@@ -19,9 +19,9 @@ class Food < ApplicationRecord
     def self.sort_by_options(sort_option)
         case sort_option
         when "Carbs"
-            order(:carbs)
+            order(carbs: :desc)
         when "Calories"
-            order(:calories)
+            order(calories: :desc)
         else
             all
         end

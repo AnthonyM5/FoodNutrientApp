@@ -12,13 +12,13 @@ class FoodsController < ApplicationController
 
     private
 
-    def sort_column
-        if params[:sort_options] == "calories"
-            @foods = Food.order(:calories)
-        end
-        if params[:sort_options] == "carbs"
-            @foods = Food.order(:carbs)
-        end
-    end
+    # def sort_column
+    #     if params[:sort_options] == "calories"
+    #         @foods = Food.order(:calories)
+    #     end
+    #     if params[:sort_options] == "carbs"
+    #         @foods = Food.order(:carbs)
+    #     end
+    # end
 
 end
