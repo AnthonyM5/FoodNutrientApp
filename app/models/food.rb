@@ -12,20 +12,19 @@ class Food < ApplicationRecord
         )
     end
 
-    # def self.update_all
-    #     @foods = Food.all
-    #     @foods.each do |food|
-    #     food.update_lipid(food)
-    #     food.update_protein(food)
-    #     food.update_water(food)
-    #     food.update_carbs(food)
-    #     food.update_calories(food)
-    #     food.update_kj(food)
-    #     end
-    # end
-
     def self.search_by_query(query)
         where("name LIKE ?", "%#{query}%")
+    end
+
+    def self.sort_by_options(sort_option)
+        case sort_option
+        when "Carbs"
+            order(:carbs)
+        when "Calories"
+            order(:calories)
+        else
+            all
+        end
     end
 
     def food_nutrient_hash(food)
