@@ -19,7 +19,7 @@ class MealsController < ApplicationController
     def edit
         @meal = Meal.find_by(id: params[:id])
         if params[:query] != ""
-            @foods = Food.search_by_query(params[:query])
+            @foods = Food.search_by_query(params[:query]).sort_by_options(params[:sort_options])
         else
         @foods = Food.all
         end

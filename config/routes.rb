@@ -6,11 +6,12 @@ Rails.application.routes.draw do
   # devise_for :users, controllers: { sessions: 'users/sessions' }
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   resources :meals, only: [:new, :create, :update, :edit, :index, :show, :destroy] do
-    resources :comments, only: [:new, :create, :update, :edit, :index, :show, :destroy]
+    resources :comments, only: [:new, :create, :update, :edit, :show, :destroy]
   end
   resources :meal_foods, only: [:new, :create, :update, :edit, :index, :show]
   resources :foods, only: [:new, :create, :update, :edit, :index, :show] 
   get '/meals/new', to: 'meals#new'
+  get 'comments', to: 'comments#index', as: :comments
   
 
   
