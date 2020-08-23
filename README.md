@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is app is an attempt to consolidate the data from the USDA FoodData Central and provide some rudimentary filtering capaiblities to sort by nutrient values.  Users will be able to export a portion of Food Data Central's database system that provides expanded nutrient profile data for over 7,000 records.  Users can search through this index by and sort by certian nutrient values such as: calories, carbs, total sugar, protein, etc. which will yield a list of records ranking from highest to lowest in nutrient value.  An example search could be "Spinach, sorted by nutrient value: Iron" revealing a list of food records containing the word spinach, ranked by iron content).   Users can also craete mealsor lists of foods, with an option to display publically for all users to see; otherwise, lists are private to individual user accounts.  Registered users can leave comments on their own meals, or leave comments on published meals.  
+# Local Installation
+- Clone this repository, and change into the correct directory.  Run bundle install to install all the necessary gems.  
+The database seed will require the following:
+- Food Data Central API Key: (Simply Sign Up via Link Below)
+https://fdc.nal.usda.gov/api-key-signup.html
+- You will need to fire up your favorite editor and create a .env file to store your API Key (this will be called in the seed file as ENV['FDC_KEY']), via the https://github.com/bkeepers/dotenv gem.
+- Run all necessary migrations via rails db:migrate 
+- Finally, we are ready to seed the data base with rake db:seed (!! Warning this will take a considerable amount of time, there are over 7,000 records each with unique nutrient attributes !!)
 
-Things you may want to cover:
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
