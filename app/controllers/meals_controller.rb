@@ -22,13 +22,12 @@ class MealsController < ApplicationController
             @foods = Food.search_by_query(params[:query]).sort_by_options(params[:sort_options])
             render 'edit'
         else
-        @foods = Food.all
+        @foods = @meal.foods
         end
     end
 
     def update
         meal = Meal.find_by(id: params[:id])
-        
         meal.update(meal_params)
         redirect_to meal_path(meal)
     end
