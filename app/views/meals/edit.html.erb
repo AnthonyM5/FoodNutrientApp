@@ -1,7 +1,6 @@
 <%= form_tag edit_meal_path, method: :get %>
   <p><%= label_tag "Search Foods" %>
   <%= text_field_tag :query %> 
-  <%= select_tag "sort_options", raw("<option>Carbs</option><option>Calories</option>") %>
   <%= submit_tag "Search" %></p>
   </form>
 <p># of Components: <%= @included %> </p>
@@ -23,3 +22,5 @@
     <%= f.submit class:"btn btn-default" %> 
     <% end %>
   </div>
+
+  
