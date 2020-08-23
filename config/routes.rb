@@ -5,8 +5,12 @@ Rails.application.routes.draw do
 
   # devise_for :users, controllers: { sessions: 'users/sessions' }
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+
+  resources :users, only: [:show, :edit] do
+    resources :comments, only: [:index]
+  end
   resources :meals, only: [:new, :create, :update, :edit, :index, :show, :destroy] do
-    resources :comments, only: [:new, :create, :update, :edit, :show, :destroy]
+    resources :comments, only: [:new, :create, :update, :edit, :destroy ]
   end
   resources :meal_foods, only: [:new, :create, :update, :edit, :index, :show]
   resources :foods, only: [:new, :create, :update, :edit, :index, :show] 

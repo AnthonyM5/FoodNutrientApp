@@ -18,7 +18,7 @@
     <% @comments.each do |comment| %>
     <tr>
       <th scope="row"><%= comment.id%></th>
-      <td><%= comment.meal_id %></td>
+      <td><%= link_to "#{comment.meal_id}", meal_path(comment.meal_id) %></td>
       <td><%= comment.user_id %></td>
       <td><%= comment.content %></td>
       <% end %>
