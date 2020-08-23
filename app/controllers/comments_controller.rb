@@ -4,8 +4,6 @@ class CommentsController < ApplicationController
     def index
         if current_user 
             @comments = User.find(current_user.id).comments
-        else
-            @comments = Comment.all
         end
     end
 
@@ -15,7 +13,7 @@ class CommentsController < ApplicationController
     end
 
     def update
-        comment = Comment.find_by(params[:comment_id])
+        comment = Comment.find_by(id: params[:id])
         comment.update(comments_params)
         if comment.valid?
             redirect_to comment.meal
