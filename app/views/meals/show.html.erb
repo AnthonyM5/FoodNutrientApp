@@ -13,7 +13,7 @@
 <p>Last Updated: <%= @meal.updated_at %></p>
 <p>Comments: <% @meal.comments.each do |comment| %>
 <p>Posted By: <%= comment.user_id %> </p>
-<p><%= comment.content %></p>
+<p><%= comment.content %> <%= comment.id%> </p>
 <% end %>
 
 <p><%= form_for([@meal, @comment]) do |f| %>

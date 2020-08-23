@@ -11,12 +11,12 @@ class CommentsController < ApplicationController
 
     def edit
         @meal = Meal.find_by(id: params[:meal_id])
-        @comment = Comment.find_by(params[:comment_id])
+        @comment = Comment.find_by(id: params[:id])
     end
 
     def update
         comment = Comment.find_by(params[:comment_id])
-        comment.update(comment_params)
+        comment.update(comments_params)
         if comment.valid?
             redirect_to comment.meal
             else
