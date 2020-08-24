@@ -1,4 +1,6 @@
-<p>Name: <%= @food.name %></p>
+<h3 class='py--5 text-center'>Name: <%= @food.name %></h3>
+<h3 class='py--5 text-center'>Portion: 100g</h3>
+<p>Associated in <%= @food.meal_foods.count %> Meals</p>
 <p>Food_ID: <%= @food.id %></p>
 <table class="table">
   <thead>
@@ -27,6 +29,6 @@
 
 
 
-<p>Associated in <%= @food.meal_foods.count %> Meals</p>
+
 
 <%= button_to "All Foods", foods_path, method: "get" %>

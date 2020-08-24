@@ -18,11 +18,11 @@ raw("
 <option>Water</option>
 <option>Zinc</option>
 ")%>
-
 <%= submit_tag "Search" %>
+<h3 class='py--5 text-center'>Portion: 100g</h3>
 <p><% @foods.each do |food| %>
 <p><%= food.id %>: 
-<%= link_to "#{food.name}", food_path(food.id) %>
+<%= link_to "#{food.name}" , food_path(food.id) %> 
  <% end %></p>
 
 
