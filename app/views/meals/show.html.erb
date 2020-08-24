@@ -1,4 +1,7 @@
-<div class="d-flex p-2"><h1> Show Page </h1></div>
+<div class="d-flex flex-column">
+<h1> Show Page </h1></div>
+<div class="card">
+  <div class="card-body">
 <p>Meal Name: <%= @meal.name %></p>
 <p>Foods: <%= @meal.meal_foods.length %></p>
 <p>Total Calories: <%= @calculated %>
@@ -8,19 +11,28 @@
 <p><%= link_to food.name, food_path(food) %></p>
 <% end %>
 </p>
+  </div>
+</div>
 <p>Created At: <%= @meal.created_at %></p>
 <p>Public Meal: <%= @meal.published %>
 <p>Last Updated: <%= @meal.updated_at %></p>
+<div class="card">
+  <div class="card-body">
 <p>Comments: <% @meal.comments.each do |comment| %>
-<p>Posted By: <%= comment.user_id %> </p>
-<p><%= comment.content %> <%= comment.id%> </p>
+<p>Posted By User#: <%= comment.user_id %> </p>
+<p>Content: <%= comment.content %></p>
 <% end %>
-
-<p><%= form_for([@meal, @comment]) do |f| %>
+  </div>
+</div>
+<div class="card">
+  <div class="card-body">
+<%= form_for([@meal, @comment]) do |f| %>
 <%= f.label :content %>
-<%= f.text_area :content %>
-<%= f.submit %>
-<% end %></p>
+<p><%= f.text_area :content %></p>
+<p><%= f.submit %></p>
+<% end %>
+  </div>
+</div>
 
 <%= link_to "Back to Published Meals", public_path %>
 <% if current_user %>
