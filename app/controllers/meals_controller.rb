@@ -45,7 +45,6 @@ class MealsController < ApplicationController
         redirect_to meal_path(@meal)
         else 
         render 'new' 
-        puts @meal.errors.full_messages
         end
     end
 

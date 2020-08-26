@@ -26,6 +26,7 @@ class CommentsController < ApplicationController
     def create
         @meal = Meal.find_by(id: params[:meal_id])
         comment = @meal.comments.create(comments_params)
+        raise params.inspect
         if comment.valid?
         redirect_to comment.meal
         else
