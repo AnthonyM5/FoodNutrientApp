@@ -1,0 +1,23 @@
+<p>Created At: <%= @meal.created_at %></p>
+<p>Public Meal: <%= @meal.published %>
+<p>Last Updated: <%= @meal.updated_at %></p>
+<div class="card">
+  <div class="card-body">
+<p>Comments: <% @meal.comments.each do |comment| %>
+<p>Posted By User#: <%= comment.user_id %> </p>
+<p>Content: <%= comment.content %></p>
+<% end %>
+  </div>
+</div>
+<div class="card">
+  <div class="card-body">
+<%= form_for([@meal, @comment]) do |f| %>
+<%= f.label :content %>
+<p><%= f.text_area :content %></p>
+<p><%= f.submit %></p>
+<% end %>
+  </div>
+</div>
+
+<%= link_to "Back to Published Meals", public_path %>
+<%= link_to "Back to Meal", meal_path(@meal.id) %>
