@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_many :meals
   has_many :comments
-  has_many :commented_meals, :through => :comments, :source => :meal
+  has_many :foods, :through => :meals, :source => :meal_foods
   
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and 
