@@ -1,0 +1,7 @@
+<h1> User ID: <%= current_user.id %></h1>
+<h3>All My Foods</h3>
+<% current_user.foods.each do |food| %>
+<p><%= link_to "#{food.name}", food_path(food.id) %>
+
+</p>
+<% end %> 
