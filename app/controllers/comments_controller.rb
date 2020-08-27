@@ -41,8 +41,12 @@ class CommentsController < ApplicationController
 
     def destroy
         @comment = Comment.find_by(id: params[:id])
+        if current_user.id == @comment.user_id
         @comment.destroy
         redirect_to comments_path
+            else 
+            flash[:errors] = "You can only delete your own posts!"
+        end
 
     end
 

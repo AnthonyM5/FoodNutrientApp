@@ -50,8 +50,12 @@ class MealsController < ApplicationController
 
     def destroy
         @meal = Meal.find_by(id: params[:id])
+        if current_user.id == @meal.user_id 
         @meal.destroy
         redirect_to meals_path
+        else
+            flash[:errors] = "You can only delete your own meals!" 
+        end
     end
 
     private

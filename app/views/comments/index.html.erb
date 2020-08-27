@@ -33,7 +33,7 @@
       <th scope="col">#</th>
       <th scope="col">From Meal#:</th>
       <th scope="col">Content:</th>
-      <th scope="col">Edit Comment:</th>
+      <th scope="col">Posted By:</th>
       
     </tr>
   </thead>
@@ -45,6 +45,7 @@
       <th scope="row"><%= comment.id%></th>
       <td><%= link_to "#{comment.meal_id}", meal_path(comment.meal_id) %></td>
       <td><%= comment.content %></td>
+      <td>User ID: <%= comment.user_id %></td>
       <% end %>
     </tr>
   </tbody>

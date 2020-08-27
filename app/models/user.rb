@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :meal_foods, :through => :meals 
   has_many :foods, :through => :meal_foods, :source => :food
   has_many :meal_comments, :through => :meals, :source => :comments
+  has_many :saved_meals, :through => :comments, :source => :meal
 
   
   # Include default devise modules. Others available are:
