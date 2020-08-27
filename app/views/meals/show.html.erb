@@ -1,5 +1,6 @@
 <div class="d-flex flex-column">
 <h1>Meal Name: <%= @meal.name %></h1></div>
+<h3>User ID: <%= @meal.user_id %></h3>
 <div class="card">
   <div class="card-body">
 <h3>Foods: <%= @meal.meal_foods.length %></h3>
@@ -20,7 +21,7 @@
 <div class="card">
   <div class="card-body">
 <p>Comments: <% @meal.comments.each do |comment| %>
-<p>Posted By User#: <%= comment.user_id %> </p>
+<p>Posted By User ID: <%= comment.user_id %> </p>
 <p>Content: <%= comment.content %></p>
 <% end %>
 <%= button_to "New Comment", new_meal_comment_path(@meal.id), method: "get" %>

@@ -1,15 +1,14 @@
 <h1>My Comments</h1>
 
 
-
-
 <table class="table">
   <thead>
     <tr>
       <th scope="col">#</th>
       <th scope="col">From Meal#:</th>
-      <th scope="col">Edit Comment:</th>
       <th scope="col">Content:</th>
+      <th scope="col">Edit Comment:</th>
+      
     </tr>
   </thead>
   <tbody>
@@ -21,6 +20,31 @@
       <td><%= link_to "#{comment.meal_id}", meal_path(comment.meal_id) %></td>
       <td><%= comment.content %></td>
       <td><%= button_to "Edit", edit_meal_comment_path(comment.meal_id, comment.id), method: 'get' %></td>
+      <% end %>
+    </tr>
+  </tbody>
+</table>
+<h1>Meal's Comments</h1>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">From Meal#:</th>
+      <th scope="col">Content:</th>
+      <th scope="col">Edit Comment:</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <th scope="row"></th>
+   <% current_user.meal_comments.each do |comment| %>
+    <tr>
+      <th scope="row"><%= comment.id%></th>
+      <td><%= link_to "#{comment.meal_id}", meal_path(comment.meal_id) %></td>
+      <td><%= comment.content %></td>
       <% end %>
     </tr>
   </tbody>

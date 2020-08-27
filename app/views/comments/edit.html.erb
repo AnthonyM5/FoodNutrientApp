@@ -1,6 +1,22 @@
+<h1>Meal Name: <%= @meal.name %></h1></div>
+<h3>User ID: <%= @meal.user_id %> | Meal ID: <%= @meal.id %></h3>
+<div class="card">
+  <div class="card-body">
+<h3>Foods: <%= @meal.meal_foods.length %></h3>
+<% @meal.foods.each do |food| %>
+<p><%= link_to food.name, food_path(food) %></p>
+<p>Calories: <%= food.calories %></p>
+<% end %>
+
+
+<p>Comments: <% @meal.comments.each do |comment| %>
+<p>Posted By User#: <%= comment.user_id %> </p>
+<p>Content: <%= comment.content %></p>
+<% end %>
+
 <p><%= form_for([@meal, @comment]) do |f| %>
 </p><%= f.label :content %>
 <p><%= f.text_area :content %></p>
 <%= f.submit %>
+
 <% end %>
- <%= button_to "Delete", comments_path(@comment.id), method: "delete" %>

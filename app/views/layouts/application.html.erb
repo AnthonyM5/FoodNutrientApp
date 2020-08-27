@@ -23,7 +23,7 @@
       <% if current_user %>
       <a class="nav-item nav-link active" href="<%= meals_path %>">My Meals<span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link active" href="<%= user_path(current_user.id) %>">My Saved Foods<span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link active" href="<%= user_comments_path(current_user.id) %>">My Comments<span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link active" href="<%= user_comments_path(current_user.id) %>">All Comments<span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" href="<%= destroy_user_session_path %>">Log Out</a>
       <% else %>
       <a class="nav-item nav-link" active" href="<%= new_user_session_path %>">Login<span class="sr-only">(current)</span></a>

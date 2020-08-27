@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :comments, only: [:new, :create, :update, :edit, :destroy ]
   end
   resources :meal_foods, only: [:new, :create, :update, :edit, :index, :show]
-  resources :foods, only: [:new, :create, :update, :edit, :index, :show] 
+  resources :foods, only: [:index, :show] 
   get '/meals/new', to: 'meals#new'
   get 'comments', to: 'comments#index', as: :comments
   get '/public', to: 'welcome#index'
