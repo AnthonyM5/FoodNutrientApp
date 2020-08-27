@@ -1,7 +1,26 @@
 <h1> User ID: <%= current_user.id %></h1>
 <h3>All My Foods</h3>
-<% current_user.foods.each do |food| %>
-<p><%= link_to "#{food.name}", food_path(food.id) %>
 
-</p>
-<% end %> 
+
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Food ID#:</th>
+      <th scope="col">Food Name:</th>
+      <th scope="col">From Meal#:</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <th scope="row"></th>
+    <% current_user.foods.each do |food| %>
+    <tr>
+      <th scope="row"><%= food.id %></th>
+      <td><%= link_to "#{food.name}", food_path(food.id) %></td>
+      <td><%= link_to "#{foods_in_meal(food).meal_id}", meal_path(foods_in_meal(food).meal_id) %></td>
+      <% end %>
+    </tr>
+  </tbody>
+</table>
