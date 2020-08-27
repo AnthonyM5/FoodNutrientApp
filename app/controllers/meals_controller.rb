@@ -33,9 +33,15 @@ class MealsController < ApplicationController
     end
 
     def show
-        @meal = Meal.find_by(id: params[:id])
+        meal = Meal.find_by(id: params[:id])
+        if !meal.published && current_user.id != meal.user_id
+            flash[:errors] = "This meal is private!"
+            redirect_to public_path 
+        else
+        @meal = Meal.find_by(id: params[:id])     
         @comment = Comment.new
         display_food
+        end
     end
 
     def create
