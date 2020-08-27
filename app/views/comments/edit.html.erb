@@ -1,5 +1,6 @@
 <p><%= form_for([@meal, @comment]) do |f| %>
-<%= f.label :content %>
-<%= f.text_area :content %>
+</p><%= f.label :content %>
+<p><%= f.text_area :content %></p>
 <%= f.submit %>
-<% end %></p>
+<% end %>
+ <%= button_to "Delete", comments_path(@comment.id), method: "delete" %>
