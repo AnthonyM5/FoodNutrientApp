@@ -8,8 +8,14 @@ class CommentsController < ApplicationController
     end
 
     def edit
+        comment = Comment.find_by(id: params[:id])
+        if comment.user_id != current_user.id
+            flash[:errors] = "Not your Comment"
+            redirect_to user_path(current_user.id)
+        else
         @meal = Meal.find_by(id: params[:meal_id])
         @comment = Comment.find_by(id: params[:id])
+        end
     end
 
     def update
