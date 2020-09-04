@@ -35,7 +35,7 @@ class MealsController < ApplicationController
     def show
         meal = Meal.find_by(id: params[:id])
         if !(current_user.id.to_s == meal.user_id) && !(meal.published) 
-            flash[:errors] = "Your User ID: #{current_user.id}, does not match with the Meal's User_ID #{meal.user_id}."
+            flash[:errors] = "This is a private meal"
             redirect_to public_path 
         else
             @meal = Meal.find_by(id: params[:id])     

@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
 
     def edit
         comment = Comment.find_by(id: params[:id])
-        if comment.user_id != current_user.id
+        if comment.user_id != current_user.id.to_s
             flash[:errors] = "Not your Comment"
             redirect_to user_path(current_user.id)
         else

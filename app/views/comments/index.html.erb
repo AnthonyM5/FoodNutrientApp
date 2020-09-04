@@ -7,7 +7,9 @@
       <th scope="col">#</th>
       <th scope="col">From Meal#:</th>
       <th scope="col">Content:</th>
-      <th scope="col">Edit Comment:</th>
+      <th scope="col">Posted:</th>
+      <th scope="col">Edit:</th>
+
       
     </tr>
   </thead>
@@ -19,6 +21,7 @@
       <th scope="row"><%= comment.id%></th>
       <td><%= link_to "#{comment.meal_id}", meal_path(comment.meal_id) %></td>
       <td><%= comment.content %></td>
+      <td><%= comment.created_at.strftime("%m/%d/%y At: %H:%M ") %></td>
       <td><%= button_to "Edit", edit_meal_comment_path(comment.meal_id, comment.id), method: 'get' %></td>
       <% end %>
     </tr>
@@ -33,7 +36,9 @@
       <th scope="col">#</th>
       <th scope="col">From Meal#:</th>
       <th scope="col">Content:</th>
+      <th scope="col">Posted:</th>
       <th scope="col">Posted By:</th>
+
       
     </tr>
   </thead>
@@ -45,6 +50,7 @@
       <th scope="row"><%= comment.id%></th>
       <td><%= link_to "#{comment.meal_id}", meal_path(comment.meal_id) %></td>
       <td><%= comment.content %></td>
+      <td><%= comment.created_at.strftime("%m/%d/%y At: %H:%M ") %></td>
       <td>User ID: <%= comment.user_id %></td>
       <% end %>
     </tr>

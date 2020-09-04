@@ -10,7 +10,8 @@
 
 
 <p>Comments: <% @meal.comments.each do |comment| %>
-<p>Posted By User#: <%= comment.user_id %> </p>
+<p>Posted: <%= comment.created_at.strftime("%m/%d/%y At: %H:%M ") %></p>
+<p>By User#: <%= comment.user_id %> </p>
 <p>Content: <%= comment.content %></p>
 <% end %>
 
