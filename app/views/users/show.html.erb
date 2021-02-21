@@ -11,7 +11,7 @@
   <tbody>
     <tr>
     <th scope="row"></th>
-    <% current_user.foods.each do |food| %>
+    <% current_user.foods.uniq.each do |food| %>
     <tr>
       <th scope="row"><%= food.id %></th>
       <td><%= link_to "#{food.name}", food_path(food.id) %></td>
