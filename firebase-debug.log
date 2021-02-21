@@ -1,0 +1,105 @@
+[debug] [2020-11-09T22:26:46.562Z] ----------------------------------------------------------------------
+[debug] [2020-11-09T22:26:46.563Z] Command:       /home/anthony/.nvm/versions/node/v13.11.0/bin/node /mnt/c/Users/antim/AppData/Roaming/npm/node_modules/firebase-tools/lib/bin/firebase.js init
+[debug] [2020-11-09T22:26:46.564Z] CLI Version:   8.15.1
+[debug] [2020-11-09T22:26:46.564Z] Platform:      linux
+[debug] [2020-11-09T22:26:46.564Z] Node Version:  v13.11.0
+[debug] [2020-11-09T22:26:46.565Z] Time:          Mon Nov 09 2020 17:26:46 GMT-0500 (Eastern Standard Time)
+[debug] [2020-11-09T22:26:46.565Z] ----------------------------------------------------------------------
+[debug] [2020-11-09T22:26:46.565Z] 
+[debug] [2020-11-09T22:26:46.574Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-11-09T22:26:46.575Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /home/anthony/FoodNutrientApp
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2020-11-09T22:26:53.724Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects?pageSize=100  
+ 
+[debug] [2020-11-09T22:26:53.910Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 09 Nov 2020 22:26:51 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  Using project new-project-a0355 (New Project) 
+[info] 
+=== Database Setup
+[info] 
+[info] Firebase Realtime Database Rules allow you to define how your data should be
+[info] structured and when your data can be read from and written to.
+[info] 
+[debug] [2020-11-09T22:27:01.876Z] >>> HTTP REQUEST GET https://new-project-a0355.firebaseio.com/.settings/rules.json  
+ 
+[debug] [2020-11-09T22:27:02.061Z] <<< HTTP RESPONSE 200 {"server":"nginx","date":"Mon, 09 Nov 2020 22:27:00 GMT","content-type":"application/json; charset=utf-8","content-length":"161","connection":"keep-alive","access-control-allow-origin":"*","cache-control":"no-cache","strict-transport-security":"max-age=31556926; includeSubDomains; preload"}
+[info] ✔  Database Rules for new-project-a0355 have been downloaded to database.rules.json. 
+[info] Future modifications to database.rules.json will update Database Rules when you run
+[info] firebase deploy.
+[info] 
+=== Firestore Setup
+[debug] [2020-11-09T22:27:02.069Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/new-project-a0355/services/firestore.googleapis.com  
+ 
+[debug] [2020-11-09T22:27:02.473Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 09 Nov 2020 22:27:00 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-11-09T22:27:02.474Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/new-project-a0355  
+ 
+[debug] [2020-11-09T22:27:02.875Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 09 Nov 2020 22:27:00 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-11-09T22:27:02.875Z] database_type: CLOUD_FIRESTORE
+[debug] [2020-11-09T22:27:02.876Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-11-09T22:27:02.877Z] > authorizing via signed-in user
+[debug] [2020-11-09T22:27:02.877Z] [iam] checking project new-project-a0355 for permissions ["firebase.projects.get"]
+[debug] [2020-11-09T22:27:02.878Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/new-project-a0355:testIamPermissions  
+ {"permissions":["firebase.projects.get"]}
+[debug] [2020-11-09T22:27:03.089Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 09 Nov 2020 22:27:01 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=139","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+[info] Firestore Security Rules allow you to define how and when to allow
+[info] requests. You can keep these rules in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2020-11-09T22:27:04.633Z] >>> HTTP REQUEST GET https://firebaserules.googleapis.com/v1/projects/new-project-a0355/releases?pageSize=10&pageToken=  
+ 
+[debug] [2020-11-09T22:27:04.831Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 09 Nov 2020 22:27:02 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-11-09T22:27:04.832Z] Found ruleset: projects/new-project-a0355/rulesets/4f26309d-3790-4d1d-b268-3bdd4cb38360
+[debug] [2020-11-09T22:27:04.832Z] >>> HTTP REQUEST GET https://firebaserules.googleapis.com/v1/projects/new-project-a0355/rulesets/4f26309d-3790-4d1d-b268-3bdd4cb38360  
+ 
+[debug] [2020-11-09T22:27:04.952Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 09 Nov 2020 22:27:03 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+[info] Firestore indexes allow you to perform complex queries while
+[info] maintaining performance that scales with the size of the result
+[info] set. You can keep index definitions in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2020-11-09T22:27:06.251Z] >>> HTTP REQUEST GET https://firestore.googleapis.com/v1/projects/new-project-a0355/databases/(default)/collectionGroups/-/indexes  
+ 
+[debug] [2020-11-09T22:27:06.252Z] >>> HTTP REQUEST GET https://firestore.googleapis.com/v1/projects/new-project-a0355/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false  
+ 
+[debug] [2020-11-09T22:27:06.783Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 09 Nov 2020 22:27:04 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-11-09T22:27:06.847Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 09 Nov 2020 22:27:04 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+=== Functions Setup
+[info] 
+[info] A functions directory will be created in your project with a Node.js
+[info] package pre-configured. Functions can be deployed with firebase deploy.
+[info] 
+[debug] [2020-11-09T22:27:06.854Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-11-09T22:27:06.855Z] > authorizing via signed-in user
+[debug] [2020-11-09T22:27:06.856Z] [iam] checking project new-project-a0355 for permissions ["firebase.projects.get"]
+[debug] [2020-11-09T22:27:06.856Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/new-project-a0355:testIamPermissions  
+ {"permissions":["firebase.projects.get"]}
+[debug] [2020-11-09T22:27:07.022Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 09 Nov 2020 22:27:05 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=128","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-11-09T22:27:07.023Z] >>> HTTP REQUEST POST https://serviceusage.googleapis.com/v1/projects/new-project-a0355/services/cloudfunctions.googleapis.com:enable  
+ 
+[debug] [2020-11-09T22:27:07.024Z] >>> HTTP REQUEST POST https://serviceusage.googleapis.com/v1/projects/new-project-a0355/services/runtimeconfig.googleapis.com:enable  
+ 
+[debug] [2020-11-09T22:27:07.359Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 09 Nov 2020 22:27:05 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-11-09T22:27:07.425Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 09 Nov 2020 22:27:05 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] ✔  Wrote functions/package.json 
+[info] ✔  Wrote functions/.eslintrc.json 
+[info] ✔  Wrote functions/index.js 
+[info] ✔  Wrote functions/.gitignore 
