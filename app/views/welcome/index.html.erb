@@ -5,6 +5,7 @@
       <th scope="col">Meal Name:</th>
       <th scope="col">User ID:</th>
       <th scope="col"># of Components</th>
+      <th scope="col"># of Users</th>
       <th scope="col"># of Comments</th>
       <th scope="col">Created At:</th>
     </tr>
@@ -16,6 +17,7 @@
 <td><%= link_to "#{meal.name}", meal_path(meal.id) %></td>
  <td> <%= meal.user.id %></td>
  <td> <%= meal.meal_foods.count %></td>
+ <td> <%= meal.users.uniq.count %>
  <td> <%= meal.comments_count %>
  <td><%= meal.created_at %></td>
  </tr>

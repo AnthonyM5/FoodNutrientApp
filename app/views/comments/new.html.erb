@@ -1,6 +1,6 @@
-<p>Created At: <%= @meal.created_at %></p>
+<p>Created At: <%= @meal.created_at.strftime("%m/%d/%y At: %H:%M ") %></p>
 <p>Public Meal: <%= @meal.published %>
-<p>Last Updated: <%= @meal.updated_at %></p>
+<p>Last Updated: <%= @meal.updated_at.strftime("%m/%d/%y At: %H:%M ") %></p>
 <div class="card">
   <div class="card-body">
 <p>Comments: <% @meal.comments.each do |comment| %>

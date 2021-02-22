@@ -70,7 +70,11 @@ GEM
       zeitwerk (~> 2.2, >= 2.2.2)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
+<<<<<<< HEAD
     autoprefixer-rails (10.2.4.0)
+=======
+    autoprefixer-rails (9.8.6.3)
+>>>>>>> ec5542e71f3ec3eede5a4d870f05ebb73e960deb
       execjs
     bcrypt (3.1.16)
     bindex (0.8.1)
@@ -120,10 +124,17 @@ GEM
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     jwt (2.2.2)
+<<<<<<< HEAD
     listen (3.4.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     loofah (2.9.0)
+=======
+    listen (3.2.1)
+      rb-fsevent (~> 0.10, >= 0.10.3)
+      rb-inotify (~> 0.9, >= 0.9.10)
+    loofah (2.7.0)
+>>>>>>> ec5542e71f3ec3eede5a4d870f05ebb73e960deb
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     mail (2.7.1)
