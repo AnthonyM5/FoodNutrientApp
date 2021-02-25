@@ -3,8 +3,14 @@ class FoodsController < ApplicationController
 
 
     def index
+        Food.find_in_batches do |foods| 
         @foods = Food.search_by_query(params[:query]).sort_by_options(params[:sort_options])
+        end
     end    
+
+    # def index
+    #     @foods = Food.search_by_query(params[:query]).sort_by_options(params[:sort_options])
+    # end
 
     def show
         @food = Food.find_by(id: params[:id])
