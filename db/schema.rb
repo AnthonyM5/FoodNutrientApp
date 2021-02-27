@@ -16,9 +16,9 @@ ActiveRecord::Schema.define(version: 2020_08_26_233445) do
   enable_extension "plpgsql"
 
   create_table "comments", force: :cascade do |t|
-    t.string "meal_id"
-    t.string "content"
-    t.string "user_id"
+    t.integer "meal_id"
+    t.integer "content"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -71,15 +71,15 @@ ActiveRecord::Schema.define(version: 2020_08_26_233445) do
   end
 
   create_table "meal_foods", force: :cascade do |t|
-    t.string "meal_id"
-    t.string "food_id"
+    t.integer "meal_id"
+    t.integer "food_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "meals", force: :cascade do |t|
     t.string "name"
-    t.string "user_id"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "published", default: false
