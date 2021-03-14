@@ -7,7 +7,7 @@ module MealsHelper
             included = Food.where(id: food.food_id)
             included.each do |f|
                 @included << f
-                @calculations += f.calories
+                @calculations += f.calories.to_i
             end
         end  
         @calculations
