@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   # end
 
   # devise_for :users, controllers: { sessions: 'users/sessions' }
-  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }  
+  # devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   resources :users, only: [:show, :edit] do
     resources :comments, only: [:index]
@@ -17,6 +18,8 @@ Rails.application.routes.draw do
   get '/meals/new', to: 'meals#new'
   # get 'comments', to: 'comments#index', as: :comments
   get '/public', to: 'welcome#index'
+
+  # post '/auth/:provider/callback', to: 'sessions#create'
   
 
   
