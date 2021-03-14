@@ -29,6 +29,7 @@ gem 'bootstrap', '~> 5.0.0.alpha1'
 gem 'devise', github: 'heartcombo/devise', branch: 'ca-omniauth-2'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'omniauth-google-oauth2'
+gem "omniauth-rails_csrf_protection"
 gem 'httparty'
 
 
